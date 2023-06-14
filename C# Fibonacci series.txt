@@ -1,0 +1,44 @@
+Certainly! Here's a code example that generates the Fibonacci series in C#:
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int count;
+        
+        Console.WriteLine("Enter the number of Fibonacci series terms to generate:");
+        count = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Fibonacci Series:");
+        for (int i = 0; i < count; i++)
+        {
+            Console.Write(Fibonacci(i) + " ");
+        }
+        
+        Console.ReadLine();
+    }
+    
+    static int Fibonacci(int n)
+    {
+        if (n <= 1)
+        {
+            return n;
+        }
+        else
+        {
+            return Fibonacci(n - 1) + Fibonacci(n - 2);
+        }
+    }
+}
+```
+
+In this code, the `Main()` method prompts the user to enter the number of Fibonacci series terms they want to generate. It then calls the `Fibonacci()` method to calculate and display the Fibonacci series.
+
+The `Fibonacci()` method is a recursive function that calculates the Fibonacci number at a given index `n`. If `n` is 0 or 1, it simply returns `n`. Otherwise, it recursively calls itself with `n-1` and `n-2` and sums up the results.
+
+The program generates the Fibonacci series based on the user's input and displays it on the console.
+
+Please note that this implementation uses recursion, which can be computationally expensive for large values of `n`. To optimize the code, you can use an iterative approach or memoization techniques.
